@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char movieName[50], date[20], time[10], seat[10];
+    int quantity, amount, refundAmount;
+    
+    printf("Welcome to Movie Ticket Booking\n");
+    
+    // Display list of movies currently showing
+    printf("Movies currently showing:\n");
+    printf("1. Hari Hara Veera Mallu\n");
+    printf("2. Dasara\n");
+    printf("3. Ravanasura\n");
+    printf("4. Shaakuntalam\n");
+    printf("5. Salaar\n");
+
+    // Get movie details
+    printf("Enter movie name: ");
+    scanf("%s", movieName);
+    printf("Enter date: ");
+    scanf("%s", date);
+    printf("Enter time: ");
+    scanf("%s", time);
+
+    // Get number of tickets
+    printf("Enter the number of tickets you want to book: ");
+    scanf("%d", &quantity);
+
+    // Get seat details
+    printf("Enter seat number(s) you want to book (separated by comma): ");
+    scanf("%s", seat);
+
+    // Calculate total amount
+    amount = quantity * 200; // assuming ticket price is Rs. 200
+
+    // Print booking details
+    printf("\nBooking Details\n");
+    printf("Movie Name: %s\n", movieName);
+    printf("Date: %s\n", date);
+    printf("Time: %s\n", time);
+    printf("Seats: %s\n", seat);
+    printf("Total amount: Rs. %d\n", amount);
+
+    // Get refund details
+    printf("\nEnter refund details\n");
+    printf("Enter the number of tickets to be refunded: ");
+    scanf("%d", &quantity);
+    printf("Enter the amount of refund: ");
+    scanf("%d", &refundAmount);
+
+    // Calculate and print the refund amount
+    amount -= refundAmount;
+    printf("\nRefund Details\n");
+    printf("Number of tickets refunded: %d\n", quantity);
+    printf("Refund amount: Rs. %d\n", refundAmount);
+    printf("Updated total amount: Rs. %d\n", amount);
+
+    return 0;
+}
